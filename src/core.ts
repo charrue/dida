@@ -135,7 +135,6 @@ export class Dida {
 
     task.modifiedTime = generateTaskCreated();
     const updateTasks = Array.isArray(task) ? task.map(formatTaskParam) : [formatTaskParam(task)];
-    console.log(updateTasks, task);
     return this.request("/api/v2/batch/task", {
       method: "POST",
       body: JSON.stringify({

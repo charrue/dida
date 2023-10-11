@@ -16,9 +16,9 @@ export function generateTaskCreated() {
 
 export function formatTaskParam(task: TaskParam): TaskParam {
   const createdTime = task.createdTime ? task.createdTime : generateTaskCreated();
-  const modifiedTime = task.modifiedTime ? task.modifiedTime : createdTime;
 
   const {
+    id = generateTaskId(),
     title,
     projectId,
     columnId,
@@ -35,6 +35,7 @@ export function formatTaskParam(task: TaskParam): TaskParam {
     reminders = [],
     sortOrder = 0,
     startDate = createdTime,
+    modifiedTime = createdTime,
     status = 0,
     tags = [],
     timeZone = "Asia/Shanghai",
@@ -43,7 +44,7 @@ export function formatTaskParam(task: TaskParam): TaskParam {
   } = task;
 
   return {
-    id: generateTaskId(),
+    id,
     title,
     projectId,
     columnId,

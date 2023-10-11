@@ -45,7 +45,7 @@ export interface TaskBean {
   focusSummaries: any[];
   commentCount: number;
   columnId: string;
-  kind: string;
+  kind: "NOTE" | "TEXT";
   deletedTime: number;
   tags: string[];
 }
@@ -142,9 +142,9 @@ export type TaskParam = Partial<
     | "tags"
   >
 > & {
-  startDate?: string;
   title: string;
   projectId: string;
+  startDate?: string;
   assignee?: string | null;
   etag?: string | null;
   creator?: number | null;

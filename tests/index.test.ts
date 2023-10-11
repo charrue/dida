@@ -1,10 +1,7 @@
+/* eslint-disable no-console */
 import { beforeEach, describe, expect, test } from "vitest";
 
 import { Dida } from "../src";
-
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 describe("dida", () => {
   let dida: Dida;
@@ -17,7 +14,7 @@ describe("dida", () => {
   });
 
   // eslint-disable-next-line max-statements
-  test("add or delete", async () => {
+  test("add & update & delete", async () => {
     const taskTitle = "NEW_TASK";
     await dida.fetchAllUnCompleted();
 
